@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 
 # Charger le modèle
-model = pickle.load(open("C:/Users/HP/Documents/machine learning/SUPERVISED/TD_2/CC3/DT_Loan_approval.pkl", "rb"))
+model = pickle.load(open("DT_Loan_approval.pkl"))
 
 st.title("🔍 Prédiction d'Approbation de Prêt")
 
@@ -13,7 +13,7 @@ tab1, tab2 = st.tabs(["📊 Prédiction de l’approbation du prêt", "📈 Anal
 with tab1:
     st.write("Veuillez remplir les informations ci-dessous pour prédire si le prêt sera approuvé :")
 
-    # --- مدخلات المستخدم ---
+
     no_of_dependents = st.number_input("Nombre de personnes à charge", min_value=0, max_value=10, value=1)
     income_annum = st.number_input("Revenu annuel (en unités monétaires)", value=5000000.0)
     loan_amount = st.number_input("Montant du prêt demandé", value=10000000.0)
@@ -48,11 +48,11 @@ with tab1:
         else:
             st.info("❌ Le prêt risque d’être refusé.")
 
-# with tab2:
-#     st.subheader("📄 Rapport de l’analyse précédente")
-#     try:
-#         with open("CC3_html.html", "r", encoding="utf-8") as f:
-#             html_data = f.read()
-#         st.components.v1.html(html_data, height=800, scrolling=True)
-#     except FileNotFoundError:
-#         st.error("❗ Le fichier d’analyse CC3_html.html est introuvable dans le dossier actuel.")
+with tab2:
+    st.subheader("📄 Rapport de l’analyse précédente")
+    try:
+        with open("CC3_html.html", "r", encoding="utf-8") as f:
+            html_data = f.read()
+        st.components.v1.html(html_data, height=800, scrolling=True)
+    except FileNotFoundError:
+        st.error("❗ Le fichier d’analyse CC3_html.html est introuvable dans le dossier actuel.")
