@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 
-model = pickle.load(open("C:/Users/HP/Documents/machine learning/SUPERVISED/TD_2/CC3/DT_Loan_approval.pkl", "rb"))
+model = pickle.load(open("DT_Loan_approval.pkl", "rb"))
 
 st.title("🔍 Prédiction d'Approbation de Prêt")
 
@@ -51,7 +51,7 @@ with tab1:
 with tab2:
     
     # Télécharger les données depuis un fichier CSV
-    df = pd.read_csv("C:/Users/HP/Documents/machine learning/SUPERVISED/TD_2/CC3/loan_approval_dataset.csv") 
+    df = pd.read_csv("loan_approval_dataset.csv") 
     df.columns = df.columns.str.strip()
 
     import matplotlib.pyplot as plt
